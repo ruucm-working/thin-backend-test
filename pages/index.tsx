@@ -11,9 +11,10 @@ import { useQuery } from "thin-backend-react";
 import { createRecord, getCurrentUserId } from "thin-backend";
 
 function NewTodoButton() {
-  function addTodo(event) {
+  function addTodo() {
     const value = window.prompt("Enter a title:") || "";
     console.log("value", value);
+    // @ts-ignore
     createRecord("todos", {
       title: value,
       userId: getCurrentUserId(),
@@ -24,6 +25,7 @@ function NewTodoButton() {
 }
 
 function TodoList() {
+  // @ts-ignore
   const todos = useQuery(query("todos").orderByDesc("createdAt"));
 
   if (todos === null) {
@@ -33,8 +35,10 @@ function TodoList() {
   return (
     <div>
       {todos
+        // @ts-ignore
         .sort((a, b) => a.created_at > b.created_at)
         .map((todo, id) => (
+          // @ts-ignore
           <div key={id}>{todo.title}</div>
         ))}
     </div>
@@ -48,7 +52,7 @@ function UserStatus() {
   return (
     <div>
       {user?.email}
-
+      {/* @ts-ignore */}
       <button onClick={logout}>Logout</button>
     </div>
   );
