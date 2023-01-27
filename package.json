@@ -11,12 +11,15 @@
   "dependencies": {
     "next": "13.1.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "thin-backend": "^0.12.1",
+    "thin-backend-react": "^0.10.1"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/thin-backend": "https://thin.dev/types/3203b92f-3c45-4949-97c8-6cba61fd324d/yRrkwStqGYSusJAcdhIiZOFlCZhNZenj",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
     "typescript": "4.9.4"
